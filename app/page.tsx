@@ -3,20 +3,9 @@
 import { useState, useRef, FormEvent, useEffect } from "react";
 import Image from "next/image";
 import {
-  Menu,
-  X,
-  Layers,
-  Zap,
-  ShieldCheck,
-  Star,
-  MessageCircle,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight,
+  Menu, X, Layers, Zap, ShieldCheck, Star, MessageCircle,
+  Instagram, Mail, Phone, MapPin, ChevronUp, ChevronLeft,
+  ChevronRight, ArrowRight, ShoppingBag,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -27,18 +16,18 @@ function Navbar() {
   const links = [
     { label: "INICIO", href: "#inicio" },
     { label: "SERVICIOS", href: "#servicios" },
-    { label: "CANCHAS", href: "#canchas" },
+    { label: "MODELOS", href: "#canchas" },
     { label: "COTIZADOR", href: "#cotizador" },
     { label: "TIENDA", href: "#tienda" },
     { label: "CONTACTO", href: "#contacto" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-atila-black/90 backdrop-blur-md border-b border-atila-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <a href="#inicio" className="flex items-center gap-2">
           <Image
-            src="/logo-sin-fondo.png"
+            src="/logoFinalBlanco.png"
             alt="ATILA PÁDEL"
             width={160}
             height={64}
@@ -53,14 +42,14 @@ function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-slate-200 hover:text-lime-400 uppercase tracking-wider text-xs font-semibold transition-colors"
+              className="text-atila-gray-200 hover:text-atila-accent uppercase tracking-wider text-xs font-semibold transition-colors"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#cotizador"
-            className="bg-lime-400 text-slate-950 px-5 py-2 rounded font-bold uppercase tracking-wider text-xs hover:brightness-110 transition-all"
+            className="bg-atila-accent text-atila-black px-5 py-2 font-bold uppercase tracking-wider text-xs hover:brightness-110 transition-all"
           >
             COTIZAR
           </a>
@@ -68,7 +57,7 @@ function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-slate-200"
+          className="md:hidden text-atila-gray-200"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
         >
@@ -78,12 +67,12 @@ function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-slate-950 border-t border-slate-800 px-4 pb-4">
+        <div className="md:hidden bg-atila-black border-t border-atila-gray-700 px-4 pb-4">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="block py-3 text-slate-200 hover:text-lime-400 uppercase tracking-wider text-sm font-semibold border-b border-slate-800"
+              className="block py-3 text-atila-gray-200 hover:text-atila-accent uppercase tracking-wider text-sm font-semibold border-b border-atila-gray-700"
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -91,7 +80,7 @@ function Navbar() {
           ))}
           <a
             href="#cotizador"
-            className="mt-4 block text-center bg-lime-400 text-slate-950 px-5 py-2 rounded font-bold uppercase tracking-wider text-xs"
+            className="mt-4 block text-center bg-atila-accent text-atila-black px-5 py-2 font-bold uppercase tracking-wider text-xs"
             onClick={() => setOpen(false)}
           >
             COTIZAR
@@ -111,39 +100,45 @@ function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image */}
+      {/* Background: 3D court render video */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/full-panoramica.avif"
-          alt="Vista panorámica de cancha de pádel profesional"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/render-hero.webp"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+        >
+          <source src="/render-remuxed.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-atila-black/85 via-atila-black/60 to-atila-black" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-20">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold uppercase tracking-widest leading-tight">
-          CONSTRUIMOS TU COMPLEJO DE PÁDEL.{" "}
-          <span className="text-lime-400">LLAVE EN MANO.</span>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tight leading-[0.95]">
+          DISEÑAMOS Y CONSTRUIMOS<br />
+          TU COMPLEJO DE PÁDEL.
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
-          Calidad profesional y materiales premium para el club que buscas.
+        <p className="mt-4 text-lg sm:text-xl md:text-2xl font-semibold text-atila-accent uppercase tracking-wider">
+          Calidad que se siente desde el primer día.
+        </p>
+        <p className="mt-6 text-base md:text-lg text-atila-gray-300 max-w-2xl mx-auto leading-relaxed">
+          Canchas profesionales con certificación WPT. Estructura, cristal, césped y iluminación de alto rendimiento.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#cotizador"
-            className="bg-lime-400 text-slate-950 px-8 py-4 rounded font-bold uppercase tracking-wider text-sm hover:scale-105 hover:brightness-110 transition-all"
+            className="bg-atila-accent text-atila-black px-10 py-4 font-extrabold uppercase tracking-wider text-sm hover:brightness-110 hover:scale-[1.02] transition-all"
           >
-            COTIZAR MI CANCHA
+            SOLICITAR PRESUPUESTO
           </a>
           <a
-            href="#tienda"
-            className="border-2 border-lime-400 text-lime-400 px-8 py-4 rounded font-bold uppercase tracking-wider text-sm hover:bg-lime-400/10 transition-all"
+            href="#canchas"
+            className="border-2 border-atila-accent text-atila-accent px-10 py-4 font-extrabold uppercase tracking-wider text-sm hover:bg-atila-accent/10 transition-all"
           >
-            VER EQUIPAMIENTO OFICIAL
+            VER MODELOS
           </a>
         </div>
       </div>
@@ -157,39 +152,39 @@ function Hero() {
 const b2bCards = [
   {
     icon: Layers,
-    title: "DISEÑO AVANZADO",
-    text: "Tecnología en blindex, césped sintético pro y estructuras certificadas.",
+    title: "DISEÑO CERTIFICADO",
+    text: "Estructuras calculadas y certificadas bajo norma. Vidrio templado UNE y césped de alto rendimiento.",
   },
   {
     icon: Zap,
-    title: "INSTALACIÓN RÁPIDA",
-    text: "Equipo certificado con plazos reales y coordinación llave en mano.",
+    title: "INSTALACIÓN LLAVE EN MANO",
+    text: "Equipo certificado con plazos reales. Coordinación completa del proyecto.",
   },
   {
     icon: ShieldCheck,
-    title: "GARANTÍA DE DURABILIDAD",
-    text: "Materiales premium con respaldo post-instalación.",
+    title: "DURABILIDAD Y RESPALDO",
+    text: "Materiales premium con garantía estructural. Respaldo post-instalación.",
   },
 ];
 
 function PropuestaValor() {
   return (
-    <section id="servicios" className="py-24 bg-slate-950">
+    <section id="servicios" className="py-24 bg-atila-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl md:text-4xl font-bold uppercase tracking-widest mb-16">
-          POR QUÉ <span className="text-lime-400">ELEGIRNOS</span>
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-16">
+          POR QUÉ <span className="text-atila-accent">ELEGIRNOS</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {b2bCards.map((c) => (
             <div
               key={c.title}
-              className="bg-slate-900 border border-slate-700 rounded-lg p-8 text-center hover:border-lime-400/50 transition-colors"
+              className="bg-atila-gray-900 border border-atila-gray-700 p-8 text-center hover:border-atila-accent/50 transition-colors"
             >
-              <c.icon className="mx-auto text-lime-400" size={40} strokeWidth={1.5} />
+              <c.icon className="mx-auto text-atila-accent" size={40} strokeWidth={1.5} />
               <h3 className="mt-6 text-lg font-bold uppercase tracking-wider">
                 {c.title}
               </h3>
-              <p className="mt-3 text-slate-400 text-sm leading-relaxed">{c.text}</p>
+              <p className="mt-3 text-atila-gray-400 text-sm leading-relaxed">{c.text}</p>
             </div>
           ))}
         </div>
@@ -199,73 +194,224 @@ function PropuestaValor() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  TIPOS DE CANCHAS                                                    */
+/*  TIPOS DE CANCHAS — 2 MODELOS                                       */
 /* ------------------------------------------------------------------ */
 const canchas = [
   {
-    title: "PANORÁMICA",
-    subtitle: "Visibilidad total",
-    description: "Canchas con cristal templado de piso a techo. La experiencia premium para jugadores y espectadores.",
-    image: "/full-panoramica.avif",
-    features: ["Cristal templado integral", "Iluminación LED profesional", "Césped sintético premium"],
+    title: "PROFESIONAL ESENCIAL",
+    subtitle: "La base profesional",
+    description: "La opción ideal para comenzar con una cancha profesional, con todos los componentes fundamentales para ofrecer un juego seguro, sólido y de rendimiento óptimo.",
+    image: "/brochure-images/esencial-hero.webp",
+    features: [
+      "Estructura autosoportante reforzada en acero de 3.5mm con galvanización",
+      "18 vidrios templados de 12mm certificados bajo norma UNE",
+      "Césped ATILA de 11mm fibrilado de alto rendimiento",
+      "8 luces LED de 200W (52.000 lúmenes)",
+      "Red profesional + herrajes A2 anti-corrosión",
+    ],
   },
   {
-    title: "PROFESIONAL",
-    subtitle: "Rendimiento competitivo",
-    description: "Estándar WPT con blindex de cristal y estructura certificada. Para quienes compiten en serio.",
-    image: "/cerrada-profesional.jpeg",
-    features: ["Blindex de cristal templado", "Estructura certificada WPT", "Césped monofilamento"],
-  },
-  {
-    title: "ESTÁNDAR",
-    subtitle: "Calidad accesible",
-    description: "La puerta de entrada al pádel profesional. Malla tensionada y materiales duraderos.",
-    image: "/abierta.webp",
-    features: ["Malla tensionada reforzada", "Césped sintético estándar", "Estructura galvanizada"],
+    title: "COMPETITION PRO",
+    subtitle: "Lo mejor que ATILA puede ofrecer",
+    description: "La mejor cancha que ATILA puede ofrecer hoy. Elegida por clubes que buscan máxima calidad, durabilidad e impacto visual.",
+    image: "/brochure-images/competition-pro-hero.webp",
+    features: [
+      "Todo lo del modelo Esencial +",
+      "Sistema de amortiguación PRO con resortes",
+      "Protecciones PRO: puerta completa + poste de red (goma espuma + revestimiento)",
+      "Protección metálica personalizada con color del club y logo",
+      "Césped Premium KDK Curly 9.000 Dtex (12mm) en 2 paños con backing de poliuretano",
+      "1 vidrio de repuesto",
+    ],
   },
 ];
 
 function Canchas() {
   return (
-    <section id="canchas" className="py-24 bg-slate-950">
+    <section id="canchas" className="py-24 bg-atila-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">
-          NUESTRAS <span className="text-lime-400">CANCHAS</span>
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-4">
+          NUESTROS <span className="text-atila-accent">MODELOS</span>
         </h2>
-        <p className="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
-          Tres líneas de construcción para cada nivel de exigencia. Todas con garantía de calidad ATILA.
+        <p className="text-center text-atila-gray-400 mb-16 max-w-2xl mx-auto">
+          Dos líneas de construcción para cada nivel de exigencia. Todas con garantía de calidad ATILA.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {canchas.map((c) => (
             <div
               key={c.title}
-              className="bg-slate-900 border border-slate-700 rounded-lg overflow-hidden hover:border-lime-400/50 transition-colors group"
+              className="bg-atila-gray-900 border border-atila-gray-700 overflow-hidden hover:border-atila-accent/50 transition-colors group"
             >
               <div className="relative h-56 overflow-hidden">
                 <Image
                   src={c.image}
-                  alt={`Cancha ${c.title} de pádel`}
+                  alt={`Cancha ${c.title} de pádel ATILA`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-atila-gray-900/80 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lime-400 font-bold uppercase tracking-widest text-lg">{c.title}</h3>
-                  <p className="text-slate-300 text-xs uppercase tracking-wider">{c.subtitle}</p>
+                  <h3 className="text-atila-accent font-extrabold uppercase tracking-widest text-lg">{c.title}</h3>
+                  <p className="text-atila-gray-200 text-xs uppercase tracking-wider">{c.subtitle}</p>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">{c.description}</p>
-                <ul className="space-y-2">
+                <p className="text-atila-gray-400 text-sm leading-relaxed mb-5">{c.description}</p>
+                <ul className="space-y-2.5">
                   {c.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-slate-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-lime-400 flex-shrink-0" />
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-atila-gray-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-atila-accent flex-shrink-0 mt-1.5" />
                       {f}
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  CARRUSEL / GALLERY — EXPERIENCIA PREMIUM                           */
+/* ------------------------------------------------------------------ */
+const carouselImages = [
+  { src: "/carousel-1.webp", caption: "Estructura reforzada en acero galvanizado", model: "COMPETITION PRO" },
+  { src: "/carousel-2.webp", caption: "Cristal templado de 12mm certificado", model: "COMPETITION PRO" },
+  { src: "/carousel-3.webp", caption: "Césped de alto rendimiento fibrilado", model: "COMPETITION PRO" },
+  { src: "/carousel-4.webp", caption: "Iluminación LED profesional integrada", model: "COMPETITION PRO" },
+  { src: "/carousel-5.webp", caption: "Detalles de corte láser personalizados", model: "COMPETITION PRO" },
+  { src: "/carousel-6.webp", caption: "Acabados premium en cada componente", model: "COMPETITION PRO" },
+];
+
+function CarouselGallery() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", checkScroll);
+    checkScroll();
+    return () => el.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = dir === "left" ? -400 : 400;
+    el.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  return (
+    <section className="py-24 bg-atila-gray-950 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Editorial header */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+          <div>
+            <span className="text-atila-accent text-xs font-bold uppercase tracking-[0.3em]">Detalle constructivo</span>
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.95]">
+              EXPERIENCIA PREMIUM<br />
+              <span className="text-atila-accent">EN CADA DETALLE</span>
+            </h2>
+            <p className="mt-6 text-atila-gray-300 text-base md:text-lg leading-relaxed max-w-lg">
+              Cada componente de una cancha ATILA está seleccionado para ofrecer el máximo rendimiento, seguridad y estética. Desde la estructura galvanizada hasta el césped fibrilado, cada detalle cuenta.
+            </p>
+            <div className="mt-8 flex items-center gap-3">
+              <span className="block h-px w-12 bg-atila-accent" />
+              <span className="text-atila-accent text-xs font-bold uppercase tracking-wider">Calidad certificada</span>
+            </div>
+          </div>
+
+          {/* Desktop stacked preview — 3 images visible */}
+          <div className="hidden lg:grid grid-cols-3 gap-4">
+            {carouselImages.slice(0, 3).map((img, i) => (
+              <div key={i} className="relative aspect-[3/4] overflow-hidden border border-atila-gray-700">
+                <Image
+                  src={img.src}
+                  alt={img.caption}
+                  fill
+                  className="object-cover"
+                  sizes="33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-atila-black/70 to-transparent" />
+                <span className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-widest text-atila-accent bg-atila-black/60 px-2 py-1">
+                  {img.model}
+                </span>
+                <p className="absolute bottom-3 left-3 right-3 text-atila-gray-200 text-[11px] uppercase tracking-wider leading-snug">
+                  {img.caption}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Horizontal scroll carousel — mobile + tablet */}
+        <div className="lg:hidden relative">
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+          >
+            {carouselImages.map((img, i) => (
+              <div
+                key={i}
+                className="snap-center flex-shrink-0 w-72 sm:w-80 relative aspect-[3/4] overflow-hidden border border-atila-gray-700"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.caption}
+                  fill
+                  className="object-cover"
+                  sizes="80vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-atila-black/70 to-transparent" />
+                <span className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-widest text-atila-accent bg-atila-black/60 px-2 py-1">
+                  {img.model}
+                </span>
+                <p className="absolute bottom-3 left-3 right-3 text-atila-gray-200 text-[11px] uppercase tracking-wider leading-snug">
+                  {img.caption}
+                </p>
+              </div>
+            ))}
+          </div>
+          {/* Scroll hint indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {carouselImages.map((_, i) => (
+              <span key={i} className="w-2 h-2 rounded-full bg-atila-gray-600" />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop bottom row — 3 more images */}
+        <div className="hidden lg:grid grid-cols-3 gap-4 mt-4">
+          {carouselImages.slice(3).map((img, i) => (
+            <div key={i} className="relative aspect-[3/4] overflow-hidden border border-atila-gray-700">
+              <Image
+                src={img.src}
+                alt={img.caption}
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-atila-black/70 to-transparent" />
+              <span className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-widest text-atila-accent bg-atila-black/60 px-2 py-1">
+                {img.model}
+              </span>
+              <p className="absolute bottom-3 left-3 right-3 text-atila-gray-200 text-[11px] uppercase tracking-wider leading-snug">
+                {img.caption}
+              </p>
             </div>
           ))}
         </div>
@@ -335,29 +481,29 @@ function Cotizador() {
   }
 
   const selectCls =
-    "w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-lime-400 transition-colors appearance-none";
+    "w-full bg-atila-gray-800 border border-atila-gray-700 px-4 py-3 text-atila-gray-200 text-sm focus:outline-none focus:border-atila-accent transition-colors appearance-none";
   const inputCls =
-    "w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-slate-200 text-sm placeholder:text-slate-500 focus:outline-none focus:border-lime-400 transition-colors";
+    "w-full bg-atila-gray-800 border border-atila-gray-700 px-4 py-3 text-atila-gray-200 text-sm placeholder:text-atila-gray-500 focus:outline-none focus:border-atila-accent transition-colors";
 
   return (
-    <section id="cotizador" className="py-24 bg-slate-950">
+    <section id="cotizador" className="py-24 bg-atila-black">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">
-          COTIZADOR <span className="text-lime-400">INTERACTIVO</span>
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-4">
+          COTIZADOR <span className="text-atila-accent">INTERACTIVO</span>
         </h2>
-        <p className="text-center text-slate-400 mb-12">
+        <p className="text-center text-atila-gray-400 mb-12">
           Completá el formulario y recibí tu presupuesto detallado en 24hs.
         </p>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="bg-slate-900 border border-lime-400/30 rounded-lg p-8 shadow-[0_0_30px_rgba(163,230,53,0.08)] space-y-5"
+          className="bg-atila-gray-900 border border-atila-accent/30 p-8 shadow-[0_0_30px_rgba(65,215,167,0.08)] space-y-5"
         >
           {/* Row 1 */}
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
                 Tipo de Cancha *
               </label>
               <select
@@ -366,14 +512,13 @@ function Cotizador() {
                 className={`${selectCls} ${errors.tipoCancha ? "border-red-500" : ""}`}
               >
                 <option value="">Seleccioná</option>
-                <option>Panorámica</option>
-                <option>Profesional</option>
-                <option>Estándar</option>
+                <option>Profesional Esencial</option>
+                <option>Competition Pro</option>
               </select>
               {errors.tipoCancha && <p className="text-red-400 text-xs mt-1">{errors.tipoCancha}</p>}
             </div>
             <div>
-              <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
                 Cantidad de Canchas *
               </label>
               <select
@@ -393,7 +538,7 @@ function Cotizador() {
           {/* Row 2 */}
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
                 Material de Piso *
               </label>
               <select
@@ -409,7 +554,7 @@ function Cotizador() {
               {errors.materialPiso && <p className="text-red-400 text-xs mt-1">{errors.materialPiso}</p>}
             </div>
             <div>
-              <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
                 Tipo de Blindex *
               </label>
               <select
@@ -429,7 +574,7 @@ function Cotizador() {
           {/* Row 3 */}
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
                 Ubicación *
               </label>
               <input
@@ -442,7 +587,7 @@ function Cotizador() {
               {errors.ubicacion && <p className="text-red-400 text-xs mt-1">{errors.ubicacion}</p>}
             </div>
             <div>
-              <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
                 Superficie Aproximada (m²) *
               </label>
               <input
@@ -458,7 +603,7 @@ function Cotizador() {
 
           {/* Row 4 */}
           <div>
-            <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+            <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
               Presupuesto Estimado *
             </label>
             <select
@@ -477,7 +622,7 @@ function Cotizador() {
 
           {/* Textarea */}
           <div>
-            <label className="block text-xs uppercase tracking-wider text-slate-400 mb-1">
+            <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
               Observaciones Adicionales
             </label>
             <textarea
@@ -491,15 +636,15 @@ function Cotizador() {
 
           {/* Submit */}
           {submitted ? (
-            <div className="bg-lime-400/10 border border-lime-400/40 rounded-lg p-6 text-center animate-fade-in-up">
-              <p className="text-lime-400 font-bold text-lg">
+            <div className="bg-atila-accent/10 border border-atila-accent/40 p-6 text-center animate-fade-in-up">
+              <p className="text-atila-accent font-bold text-lg">
                 ¡Tu solicitud fue enviada! Te contactamos en 24hs para detallar tu cotización.
               </p>
             </div>
           ) : (
             <button
               type="submit"
-              className="w-full bg-lime-400 text-slate-950 py-4 rounded font-bold uppercase tracking-wider text-sm hover:brightness-110 hover:scale-[1.02] transition-all"
+              className="w-full bg-atila-accent text-atila-black py-4 font-extrabold uppercase tracking-wider text-sm hover:brightness-110 hover:scale-[1.02] transition-all"
               aria-label="Obtener presupuesto detallado"
             >
               OBTENER PRESUPUESTO DETALLADO
@@ -512,101 +657,22 @@ function Cotizador() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  RESEÑAS                                                             */
-/* ------------------------------------------------------------------ */
-const reviews = [
-  {
-    stars: 5,
-    text: "ATILA construyó nuestras 4 canchas panorámicas en tiempo récord. La calidad del blindex y el césped es impecable. Nuestros socios están encantados con el resultado.",
-    name: "Martín Leguizamón",
-    role: "Director — Pádel Club San Isidro",
-    location: "Buenos Aires, Argentina",
-  },
-  {
-    stars: 5,
-    text: "Desde el diseño hasta la entrega final, el equipo de ATILA fue profesional y transparente. Las canchas quedaron perfectas y el servicio post-instalación es excelente.",
-    name: "Carolina Méndez",
-    role: "Fundadora — Mega Pádel Rosario",
-    location: "Rosario, Argentina",
-  },
-  {
-    stars: 5,
-    text: "Elegimos a ATILA por la garantía de durabilidad y no nos defraudaron. Dos años después, las canchas lucen como el primer día. Recomiendo sin dudas.",
-    name: "Esteban Ruiz",
-    role: "Gerente — Complejo Pádel Sur",
-    location: "Córdoba, Argentina",
-  },
-];
-
-function Resenas() {
-  return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Subtle background image */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <Image
-          src="/abierta.webp"
-          alt=""
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-      </div>
-      <div className="absolute inset-0 bg-slate-950/80 z-[1]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl md:text-4xl font-bold uppercase tracking-widest mb-16">
-          LO QUE DICEN NUESTROS <span className="text-lime-400">CLIENTES</span>
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {reviews.map((r, i) => (
-            <div
-              key={i}
-              className="bg-slate-900 border border-slate-700 rounded-lg p-8 hover:border-lime-400/30 transition-colors"
-            >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: r.stars }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={18}
-                    className="text-lime-400 fill-lime-400"
-                  />
-                ))}
-              </div>
-              <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                &ldquo;{r.text}&rdquo;
-              </p>
-              <div className="border-t border-slate-700 pt-4">
-                <p className="font-bold text-slate-50">{r.name}</p>
-                <p className="text-lime-400 text-xs uppercase tracking-wider">
-                  {r.role}
-                </p>
-                <p className="text-slate-500 text-xs mt-1">{r.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
 /*  TIENDA OFICIAL B2C — Header                                         */
 /* ------------------------------------------------------------------ */
 function TiendaHeader() {
   return (
-    <section id="tienda" className="pt-24 pb-4 bg-slate-950">
+    <section id="tienda" className="pt-24 pb-4 bg-atila-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest">
-          TIENDA OFICIAL: ACCESORIOS DE <span className="text-lime-400">ÉLITE</span>
+        <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight">
+          TIENDA OFICIAL: ACCESORIOS DE <span className="text-atila-accent">ÉLITE</span>
         </h2>
-        <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-atila-gray-400 max-w-2xl mx-auto">
           Potencia tu juego con tecnología ATILA. Paletas de carbono premium con la mejor tecnología. Comprá directo y sin intermediarios.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <span className="block h-px w-16 bg-slate-700" />
-          <span className="block h-1.5 w-1.5 rounded-full bg-lime-400" />
-          <span className="block h-px w-16 bg-slate-700" />
+          <span className="block h-px w-16 bg-atila-gray-700" />
+          <span className="block h-1.5 w-1.5 bg-atila-accent" />
+          <span className="block h-px w-16 bg-atila-gray-700" />
         </div>
       </div>
     </section>
@@ -723,8 +789,8 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
   const next = () => setCurrentImg((i) => (i === product.images.length - 1 ? 0 : i + 1));
 
   return (
-    <div className="bg-slate-900 border border-slate-700 rounded-lg overflow-hidden hover:border-lime-400 transition-colors group flex flex-col">
-      <div className="relative bg-slate-800 aspect-square overflow-hidden">
+    <div className="bg-atila-gray-900 border border-atila-gray-700 overflow-hidden hover:border-atila-accent transition-colors group flex flex-col">
+      <div className="relative bg-atila-gray-800 aspect-square overflow-hidden">
         <Image
           src={product.images[currentImg]}
           alt={`${product.name} - imagen ${currentImg + 1}`}
@@ -734,12 +800,12 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
           unoptimized
         />
         {product.badge && (
-          <span className="absolute top-3 left-3 z-10 bg-lime-400 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+          <span className="absolute top-3 left-3 z-10 bg-atila-accent text-atila-black text-[10px] font-bold uppercase tracking-wider px-2.5 py-1">
             {product.badge}
           </span>
         )}
         {product.discount && (
-          <span className="absolute top-3 right-3 z-10 bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">
+          <span className="absolute top-3 right-3 z-10 bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1">
             {product.discount}
           </span>
         )}
@@ -748,14 +814,14 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
             <button
               onClick={prev}
               aria-label="Imagen anterior"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-slate-900/70 hover:bg-slate-900 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-atila-gray-900/70 hover:bg-atila-gray-900 text-white p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronLeft size={18} />
             </button>
             <button
               onClick={next}
               aria-label="Imagen siguiente"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-slate-900/70 hover:bg-slate-900 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-atila-gray-900/70 hover:bg-atila-gray-900 text-white p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronRight size={18} />
             </button>
@@ -765,8 +831,8 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
                   key={i}
                   onClick={() => setCurrentImg(i)}
                   aria-label={`Ir a imagen ${i + 1}`}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    i === currentImg ? "bg-lime-400" : "bg-slate-500"
+                  className={`w-2 h-2 transition-colors ${
+                    i === currentImg ? "bg-atila-accent" : "bg-atila-gray-500"
                   }`}
                 />
               ))}
@@ -780,9 +846,9 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
         </h3>
         <div className="mt-auto">
           <div className="flex items-baseline gap-2">
-            <p className="text-lime-400 font-bold text-xl">{product.price}</p>
+            <p className="text-atila-accent font-bold text-xl">{product.price}</p>
             {product.oldPrice && (
-              <p className="text-slate-500 text-sm line-through">{product.oldPrice}</p>
+              <p className="text-atila-gray-500 text-sm line-through">{product.oldPrice}</p>
             )}
           </div>
           <a
@@ -790,12 +856,12 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Ver ${product.name} en Gravedad X`}
-            className="mt-4 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white w-full py-3 rounded font-bold uppercase tracking-wider text-xs transition-colors"
+            className="mt-4 flex items-center justify-center gap-2 bg-atila-accent text-atila-black hover:brightness-110 w-full py-3 font-bold uppercase tracking-wider text-xs transition-colors"
           >
-            <MessageCircle size={16} />
-            Comprar Directo
+            <ShoppingBag size={16} />
+            COMPRAR
           </a>
-          <p className="mt-2 text-slate-500 text-[10px] uppercase tracking-wider text-center">
+          <p className="mt-2 text-atila-gray-500 text-[10px] uppercase tracking-wider text-center">
             Sin intermediarios — compra directa en Gravedad X
           </p>
         </div>
@@ -806,7 +872,7 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
 
 function ProductGrid() {
   return (
-    <section className="pb-16 bg-slate-950">
+    <section className="pb-16 bg-atila-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((p) => (
@@ -819,23 +885,96 @@ function ProductGrid() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  RESEÑAS                                                             */
+/* ------------------------------------------------------------------ */
+const reviews = [
+  {
+    stars: 5,
+    text: "ATILA construyó nuestras 4 canchas panorámicas en tiempo récord. La calidad del blindex y el césped es impecable. Nuestros socios están encantados con el resultado.",
+    name: "Martín Leguizamón",
+    role: "Director — Pádel Club San Isidro",
+    location: "Buenos Aires, Argentina",
+  },
+  {
+    stars: 5,
+    text: "Desde el diseño hasta la entrega final, el equipo de ATILA fue profesional y transparente. Las canchas quedaron perfectas y el servicio post-instalación es excelente.",
+    name: "Carolina Méndez",
+    role: "Fundadora — Mega Pádel Rosario",
+    location: "Rosario, Argentina",
+  },
+  {
+    stars: 5,
+    text: "Elegimos a ATILA por la garantía de durabilidad y no nos defraudaron. Dos años después, las canchas lucen como el primer día. Recomiendo sin dudas.",
+    name: "Esteban Ruiz",
+    role: "Gerente — Complejo Pádel Sur",
+    location: "Córdoba, Argentina",
+  },
+];
+
+function Resenas() {
+  return (
+    <section className="py-24 relative overflow-hidden bg-atila-gray-950">
+      {/* Subtle geometric gradient overlay — no background image */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-atila-gray-900/50 via-atila-gray-950 to-atila-black/80" />
+      <div className="absolute inset-0 z-0 opacity-[0.03]" style={{
+        backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(65,215,167,0.5) 40px, rgba(65,215,167,0.5) 41px)",
+      }} />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-16">
+          LO QUE DICEN NUESTROS <span className="text-atila-accent">CLIENTES</span>
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {reviews.map((r, i) => (
+            <div
+              key={i}
+              className="bg-atila-gray-900 border border-atila-gray-700 p-8 hover:border-atila-accent/30 transition-colors"
+            >
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: r.stars }).map((_, j) => (
+                  <Star
+                    key={j}
+                    size={18}
+                    className="text-atila-accent fill-atila-accent"
+                  />
+                ))}
+              </div>
+              <p className="text-atila-gray-300 text-sm leading-relaxed mb-6">
+                &ldquo;{r.text}&rdquo;
+              </p>
+              <div className="border-t border-atila-gray-700 pt-4">
+                <p className="font-bold text-atila-white">{r.name}</p>
+                <p className="text-atila-accent text-xs uppercase tracking-wider">
+                  {r.role}
+                </p>
+                <p className="text-atila-gray-500 text-xs mt-1">{r.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  FOOTER                                                              */
 /* ------------------------------------------------------------------ */
 function Footer() {
   return (
-    <footer id="contacto" className="bg-slate-900 border-t border-slate-800">
+    <footer id="contacto" className="bg-atila-gray-900 border-t border-atila-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <Image
-              src="/logo-sin-fondo.png"
+              src="/logoFinalBlanco.png"
               alt="ATILA PÁDEL"
-              width={200}
-              height={80}
+              width={180}
+              height={72}
               className="h-20 w-auto mb-4"
             />
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-atila-gray-400 text-sm leading-relaxed">
               Construimos complejos de pádel de clase mundial. Diseño, instalación y garantía llave en mano.
             </p>
           </div>
@@ -843,12 +982,12 @@ function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-xs uppercase tracking-widest font-bold mb-4">Contacto</h4>
-            <div className="space-y-3 text-sm text-slate-400">
-              <a href="mailto:info@atilapadel.com" className="flex items-center gap-2 hover:text-lime-400 transition-colors">
+            <div className="space-y-3 text-sm text-atila-gray-400">
+              <a href="mailto:info@atilapadel.com" className="flex items-center gap-2 hover:text-atila-accent transition-colors">
                 <Mail size={16} /> info@atilapadel.com
               </a>
-              <a href="tel:+5491100000000" className="flex items-center gap-2 hover:text-lime-400 transition-colors">
-                <Phone size={16} /> +54 9 11 0000-0000
+              <a href="tel:+5493415607480" className="flex items-center gap-2 hover:text-atila-accent transition-colors">
+                <Phone size={16} /> +54 9 3415 60-7480
               </a>
               <span className="flex items-center gap-2">
                 <MapPin size={16} /> Buenos Aires, Argentina
@@ -863,7 +1002,7 @@ function Footer() {
               href="https://www.instagram.com/atilapadel/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-slate-400 hover:text-lime-400 transition-colors"
+              className="inline-flex items-center gap-2 text-atila-gray-400 hover:text-atila-accent transition-colors"
             >
               <Instagram size={20} />
               <span className="text-sm">@atilapadel</span>
@@ -871,12 +1010,12 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 text-center">
-          <p className="text-slate-500 text-xs uppercase tracking-wider">
+        <div className="mt-12 pt-8 border-t border-atila-gray-700 text-center">
+          <p className="text-atila-gray-500 text-xs uppercase tracking-wider">
             © {new Date().getFullYear()} ATILA PÁDEL. Todos los derechos reservados.
           </p>
           <div className="mt-4 flex items-center justify-center gap-2">
-            <span className="text-slate-600 text-xs uppercase tracking-wider">Powered by</span>
+            <span className="text-atila-gray-600 text-xs uppercase tracking-wider">Powered by</span>
             <Image
               src="/moveup-logo.png"
               alt="MoveUp"
@@ -897,19 +1036,19 @@ function Footer() {
 function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/"
+      href="https://wa.me/5493415607480"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Hablar con un asesor por WhatsApp"
-      className="pulse-lime fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all"
+      className="pulse-teal fixed bottom-6 right-6 z-50 bg-atila-accent text-atila-black w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-all"
     >
-      <MessageCircle size={28} />
+      <ShoppingBag size={28} />
     </a>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  SCROLL TO TOP (accessibility bonus)                                  */
+/*  SCROLL TO TOP                                                       */
 /* ------------------------------------------------------------------ */
 function ScrollTop() {
   const [visible, setVisible] = useState(false);
@@ -924,7 +1063,7 @@ function ScrollTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 left-6 z-50 bg-slate-800 hover:bg-slate-700 text-slate-300 p-3 rounded-full transition-colors"
+      className="fixed bottom-6 left-6 z-50 bg-atila-gray-800 hover:bg-atila-gray-700 text-atila-gray-300 p-3 transition-colors"
       aria-label="Volver arriba"
     >
       <ChevronUp size={20} />
@@ -942,6 +1081,7 @@ export default function Page() {
       <Hero />
       <PropuestaValor />
       <Canchas />
+      <CarouselGallery />
       <Cotizador />
       <TiendaHeader />
       <ProductGrid />

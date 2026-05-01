@@ -6,13 +6,13 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes pulse-lime {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(163, 230, 53, 0.5); }
-  50% { box-shadow: 0 0 0 12px rgba(163, 230, 53, 0); }
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(65, 215, 167, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(65, 215, 167, 0); }
 }
 
-.pulse-lime {
-  animation: pulse-lime 2s infinite;
+.pulse-teal {
+  animation: pulse-teal 2s infinite;
 }
 
 @keyframes fade-in-up {
@@ -22,4 +22,9 @@ html {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
