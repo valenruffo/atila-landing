@@ -214,7 +214,7 @@ const canchas = [
     subtitle: "Nuestro modelo insignia",
     description: "La máxima expresión de calidad, durabilidad y diseño. Pensada para clubes que buscan diferenciarse y llevar su proyecto a otro nivel.",
     image: "/brochure-images/competition-pro-final-v2.webp",
-    imageFit: "contain" as const,
+    imageFit: "cover" as const,
     features: [
       "Personalización TOTAL (colores, identidad, logos, detalles)",
       "Estructura reforzada + sistema de amortiguación PRO",
