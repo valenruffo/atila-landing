@@ -52,6 +52,9 @@ export const metadata: Metadata = {
       "Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento.",
     images: ["/isologotipo-page3.png"],
   },
+  other: {
+    "last-modified": "2026-05-05",
+  },
 };
 
 export default function RootLayout({
