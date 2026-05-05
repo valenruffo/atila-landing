@@ -631,9 +631,9 @@ function TiendaHeader() {
 const products = [
   {
     name: "Paleta Atila Conquista Carbono 12k Diamante Eva Feel",
-    price: "$298.200",
-    oldPrice: null,
-    discount: null,
+    price: "$299.202",
+    oldPrice: "$325.220",
+    discount: "8% OFF",
     badge: "MÁS VENDIDA",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2NGQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0faf0610b203968e7be604db56dd489378ccdb2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_653715-MLA105260751117_012026-F.webp",
@@ -701,9 +701,9 @@ const products = [
   },
   {
     name: "Paleta Atila Bleda Carbono 12k Diamante Eva Soft",
-    price: "$240.407",
-    oldPrice: null,
-    discount: null,
+    price: "$240.755",
+    oldPrice: "$261.690",
+    discount: "8% OFF",
     badge: "NUEVA",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3E1QkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cd4dae4b2598a77135732f64ec68efa7c31b52dc/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_698724-MLA103231524584_012026-F.webp",
@@ -715,9 +715,9 @@ const products = [
   },
   {
     name: "Paleta Atila Impune Fibra de Vidrio Diamante Eva",
-    price: "$175.000",
-    oldPrice: null,
-    discount: null,
+    price: "$175.619",
+    oldPrice: "$190.890",
+    discount: "8% OFF",
     badge: "KIT COMBO",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK2k5Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--dee28c762dff77f60595ddcb9e6d3e9fcbc8b0e2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_755130-MLA110382728201_042026-F.webp",
@@ -845,8 +845,14 @@ function ProductGrid() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  RESEÑAS — Instagram Reel                                            */
+/*  RESEÑAS — Instagram Reels                                           */
 /* ------------------------------------------------------------------ */
+const reels = [
+  { url: "https://www.instagram.com/reel/DVriHJnkTqQ/embed/", label: "Reel 1" },
+  { url: "https://www.instagram.com/reel/DRNvIAZkm7q/embed/", label: "Reel 2" },
+  { url: "https://www.instagram.com/reel/DXu3uACk6cq/embed/", label: "Reel 3" },
+];
+
 function Resenas() {
   return (
     <section className="py-24 relative overflow-hidden bg-atila-gray-950">
@@ -859,19 +865,25 @@ function Resenas() {
         <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-16">
           NUESTRO TRABAJO <span className="text-atila-accent">EN ACCIÓN</span>
         </h2>
-        <div className="flex justify-center">
-          <div className="w-full max-w-md border border-atila-gray-700 overflow-hidden">
-            <iframe
-              src="https://www.instagram.com/reel/DRNvIAZkm7q/embed/"
-              width="100%"
-              height="600"
-              frameBorder="0"
-              scrolling="no"
-              allowFullScreen
-              className="w-full"
-              title="ATILA PÁDEL - Instagram Reel"
-            />
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {reels.map((r, i) => (
+            <div
+              key={i}
+              className="border border-atila-gray-700 overflow-hidden bg-atila-gray-900"
+            >
+              <iframe
+                src={r.url}
+                width="100%"
+                height="550"
+                frameBorder="0"
+                scrolling="no"
+                allowFullScreen
+                className="w-full"
+                title={r.label}
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -1084,9 +1096,9 @@ export default function Page() {
       <Canchas />
       <CarouselGallery />
       <Cotizador />
+      <Resenas />
       <TiendaHeader />
       <ProductGrid />
-      <Resenas />
       <Footer />
       <FloatingWhatsApp />
       <ScrollTop />
