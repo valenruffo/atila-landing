@@ -199,7 +199,6 @@ const canchas = [
     subtitle: "Cancha profesional esencial",
     description: "La base sólida para comenzar tu proyecto. Estructura resistente, componentes profesionales y excelente relación inversión–rendimiento.",
     image: "/brochure-images/esencial-hero.webp",
-    imageFit: "cover" as const,
     features: [
       "Estructura reforzada de acero galvanizado",
       "Full panorámica 360° (sin esquinas)",
@@ -214,7 +213,6 @@ const canchas = [
     subtitle: "Nuestro modelo insignia",
     description: "La máxima expresión de calidad, durabilidad y diseño. Pensada para clubes que buscan diferenciarse y llevar su proyecto a otro nivel.",
     image: "/brochure-images/competition-pro-final-v2.webp",
-    imageFit: "cover" as const,
     features: [
       "Personalización TOTAL (colores, identidad, logos, detalles)",
       "Estructura reforzada + sistema de amortiguación PRO",
@@ -245,12 +243,12 @@ function Canchas() {
               key={c.title}
               className="bg-atila-gray-900 border border-atila-gray-700 overflow-hidden hover:border-atila-accent/50 transition-colors group"
             >
-              <div className={`relative aspect-[3/2] overflow-hidden ${c.imageFit === "contain" ? "bg-black" : ""}`}>
+              <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
                   src={c.image}
                   alt={`Cancha ${c.title} de pádel ATILA`}
                   fill
-                  className={`group-hover:scale-105 transition-transform duration-500 ${c.imageFit === "contain" ? "object-contain" : "object-cover"}`}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-atila-gray-900/80 to-transparent" />
