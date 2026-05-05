@@ -467,6 +467,19 @@ function Cotizador() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!validate()) return;
+
+    const mensaje = `¡Hola! Quiero cotizar mi cancha de pádel 🏓
+
+👤 Nombre: ${form.nombre} ${form.apellido}
+📍 Ubicación: ${form.localidad}
+🏟️ Cantidad de canchas: ${form.cantidad}
+📝 Observaciones: ${form.observaciones.trim() || "Sin observaciones adicionales"}
+
+¡Gracias!`;
+
+    const url = `https://wa.me/5493415607480?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+
     setSubmitted(true);
     setTimeout(() => {
       setForm(cotizadorDefaults);
