@@ -631,9 +631,9 @@ function TiendaHeader() {
 const products = [
   {
     name: "Paleta Atila Conquista Carbono 12k Diamante Eva Feel",
-    price: "$271.005",
-    oldPrice: "$325.220",
-    discount: "17% OFF",
+    price: "$298.200",
+    oldPrice: null,
+    discount: null,
     badge: "MÁS VENDIDA",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2NGQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0faf0610b203968e7be604db56dd489378ccdb2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_653715-MLA105260751117_012026-F.webp",
@@ -674,9 +674,9 @@ const products = [
   },
   {
     name: "Paleta Atila Imperia Diamante Full Carbono",
-    price: "$231.141",
-    oldPrice: "$251.240",
-    discount: "8% OFF",
+    price: "$285.702",
+    oldPrice: null,
+    discount: null,
     badge: null,
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeVBYQWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--019833c8df275c6d6eb46a13efbae909f91713c9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_939270-MLA75984819823_042024-F.webp",
@@ -688,9 +688,9 @@ const products = [
   },
   {
     name: "Paleta Atila Soberbia Diamante Full Carbono",
-    price: "$231.141",
-    oldPrice: "$251.240",
-    discount: "8% OFF",
+    price: "$285.702",
+    oldPrice: null,
+    discount: null,
     badge: null,
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeWkxQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--7a28a0e51bee8617d93bc56dbffab498488144ea/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_738924-MLA76004056125_042024-F.webp",
@@ -702,8 +702,8 @@ const products = [
   {
     name: "Paleta Atila Bleda Carbono 12k Diamante Eva Soft",
     price: "$240.407",
-    oldPrice: "$261.690",
-    discount: "8% OFF",
+    oldPrice: null,
+    discount: null,
     badge: "NUEVA",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3E1QkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cd4dae4b2598a77135732f64ec68efa7c31b52dc/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_698724-MLA103231524584_012026-F.webp",
@@ -715,9 +715,9 @@ const products = [
   },
   {
     name: "Paleta Atila Impune Fibra de Vidrio Diamante Eva",
-    price: "$175.619",
-    oldPrice: "$190.890",
-    discount: "8% OFF",
+    price: "$175.000",
+    oldPrice: null,
+    discount: null,
     badge: "KIT COMBO",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK2k5Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--dee28c762dff77f60595ddcb9e6d3e9fcbc8b0e2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_755130-MLA110382728201_042026-F.webp",
@@ -728,9 +728,9 @@ const products = [
   },
   {
     name: "Paleta Atila Huno Redonda Fibra Vidrio Foam",
-    price: "$121.440",
-    oldPrice: "$132.000",
-    discount: "8% OFF",
+    price: "$159.209",
+    oldPrice: null,
+    discount: null,
     badge: "ENVÍO GRATIS",
     images: [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUc1QkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--12bf2ee7812900cd1ddc9d00e9f4846039ac50f9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_834340-MLA102996133909_122025-F.webp",
