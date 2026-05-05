@@ -2,14 +2,36 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ATILA PÁDEL — Canchas Profesionales Llave en Mano",
+  title: "ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina | Diseño e Instalación",
   description:
-    "Diseñamos y construimos tu complejo de pádel con la más alta calidad. Canchas profesionales, panorámicas y Competition Pro. Diseño, instalación y garantía total.",
-  keywords: ["pádel", "canchas de pádel", "complejo de pádel", "construcción", "Argentina"],
+    "Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento. Solicitá tu presupuesto.",
+  keywords: [
+    "canchas de pádel",
+    "canchas de pádel en Argentina",
+    "instalación de canchas de pádel",
+    "fabricar canchas de pádel",
+    "cancha de pádel profesional",
+    "canchas de pádel personalizadas",
+    "complejo de pádel",
+    "canchas panorámicas",
+    "pádel Argentina",
+    "ATILA pádel",
+  ],
+  alternates: { canonical: "https://atilapadel.com" },
+  robots: { index: true, follow: true },
+  verification: { other: { "google-site-verification": "" } },
+  icons: {
+    icon: [
+      { url: "/isologotipo-page3.png", type: "image/png", sizes: "any" },
+    ],
+    apple: [
+      { url: "/isologotipo-page3.png", type: "image/png", sizes: "180x180" },
+    ],
+  },
   openGraph: {
-    title: "ATILA PÁDEL — Canchas Profesionales Llave en Mano",
+    title: "ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina | Diseño e Instalación",
     description:
-      "Diseñamos y construimos tu complejo de pádel con la más alta calidad. Canchas profesionales, panorámicas y Competition Pro.",
+      "Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento.",
     type: "website",
   },
 };

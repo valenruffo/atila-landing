@@ -3,9 +3,9 @@
 import { useState, useRef, FormEvent, useEffect } from "react";
 import Image from "next/image";
 import {
-  Menu, X, Layers, Zap, ShieldCheck, Star, MessageCircle,
+  Menu, X, Layers, ShieldCheck, Star, MessageCircle,
   Instagram, Mail, Phone, MapPin, ChevronUp, ChevronLeft,
-  ChevronRight, ArrowRight, ShoppingBag,
+  ChevronRight, ArrowRight, ShoppingBag, Youtube,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -15,11 +15,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
     { label: "INICIO", href: "#inicio" },
-    { label: "SERVICIOS", href: "#servicios" },
-    { label: "MODELOS", href: "#canchas" },
-    { label: "COTIZADOR", href: "#cotizador" },
     { label: "TIENDA", href: "#tienda" },
-    { label: "CONTACTO", href: "#contacto" },
   ];
 
   return (
@@ -118,14 +114,14 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-20">
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tight leading-[0.95]">
-          DISEÑAMOS Y CONSTRUIMOS<br />
-          TU COMPLEJO DE PÁDEL.
+          CANCHAS DE PÁDEL PROFESIONALES<br />
+          PERSONALIZADAS
         </h1>
         <p className="mt-4 text-lg sm:text-xl md:text-2xl font-semibold text-atila-accent uppercase tracking-wider">
-          Calidad que se siente desde el primer día.
+          Diseñadas para rendir, construidas para durar.
         </p>
         <p className="mt-6 text-base md:text-lg text-atila-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Canchas profesionales con certificación WPT. Estructura, cristal, césped y iluminación de alto rendimiento.
+          DISEÑAMOS E INSTALAMOS CANCHAS PREMIUM PARA CLUBES, COMPLEJOS DEPORTIVOS E INVERSORES
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -135,10 +131,12 @@ function Hero() {
             SOLICITAR PRESUPUESTO
           </a>
           <a
-            href="#canchas"
+            href="https://calendly.com/atilapadel/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="border-2 border-atila-accent text-atila-accent px-10 py-4 font-extrabold uppercase tracking-wider text-sm hover:bg-atila-accent/10 transition-all"
           >
-            VER MODELOS
+            AGENDAR VIDEOLLAMADA
           </a>
         </div>
       </div>
@@ -152,18 +150,18 @@ function Hero() {
 const b2bCards = [
   {
     icon: Layers,
-    title: "DISEÑO CERTIFICADO",
-    text: "Estructuras calculadas y certificadas bajo norma. Vidrio templado UNE y césped de alto rendimiento.",
+    title: "DISEÑO PERSONALIZADO",
+    text: "Personalización total en estética, identidad y terminaciones. Una cancha que eleva la imagen y el posicionamiento de tu espacio.",
   },
   {
-    icon: Zap,
-    title: "INSTALACIÓN LLAVE EN MANO",
-    text: "Equipo certificado con plazos reales. Coordinación completa del proyecto.",
+    icon: MessageCircle,
+    title: "ASESORAMIENTO INTEGRAL",
+    text: "Te acompañamos de principio a fin en todo el proyecto para que tu inversión rinda y tu cancha funcione desde el primer día.",
   },
   {
     icon: ShieldCheck,
-    title: "DURABILIDAD Y RESPALDO",
-    text: "Materiales premium con garantía estructural. Respaldo post-instalación.",
+    title: "ESTRUCTURA CERTIFICADA",
+    text: "Diseñada para resistir viento, uso intensivo y condiciones sísmicas. Cristales templados certificados bajo norma UNE.",
   },
 ];
 
@@ -198,31 +196,37 @@ function PropuestaValor() {
 /* ------------------------------------------------------------------ */
 const canchas = [
   {
-    title: "PROFESIONAL ESENCIAL",
-    subtitle: "La base profesional",
-    description: "La opción ideal para comenzar con una cancha profesional, con todos los componentes fundamentales para ofrecer un juego seguro, sólido y de rendimiento óptimo.",
+    title: "MODELO CLUB",
+    subtitle: "Cancha profesional esencial",
+    description: "La base sólida para comenzar tu proyecto. Estructura resistente, componentes profesionales y excelente relación inversión–rendimiento.",
     image: "/brochure-images/esencial-hero.webp",
+    imageFit: "cover" as const,
     features: [
-      "Estructura autosoportante reforzada en acero de 3.5mm con galvanización",
-      "18 vidrios templados de 12mm certificados bajo norma UNE",
-      "Césped ATILA de 11mm fibrilado de alto rendimiento",
-      "8 luces LED de 200W (52.000 lúmenes)",
-      "Red profesional + herrajes A2 anti-corrosión",
+      "Estructura reforzada de acero galvanizado",
+      "Full panorámica 360° (sin esquinas)",
+      "Vidrios templados de 12mm certificados (norma UNE)",
+      "Césped profesional de alto rendimiento",
+      "Iluminación LED para uso intensivo",
     ],
+    footer: "Ideal para proyectos que buscan eficiencia sin resignar calidad",
   },
   {
-    title: "COMPETITION PRO",
-    subtitle: "Lo mejor que ATILA puede ofrecer",
-    description: "La mejor cancha que ATILA puede ofrecer hoy. Elegida por clubes que buscan máxima calidad, durabilidad e impacto visual.",
-    image: "/brochure-images/competition-pro-hero.webp",
+    title: "MODELO COMPETITION PRO",
+    subtitle: "Nuestro modelo insignia",
+    description: "La máxima expresión de calidad, durabilidad y diseño. Pensada para clubes que buscan diferenciarse y llevar su proyecto a otro nivel.",
+    image: "/brochure-images/page5_img1.jpeg",
+    imageFit: "contain" as const,
     features: [
-      "Todo lo del modelo Esencial +",
-      "Sistema de amortiguación PRO con resortes",
-      "Protecciones PRO: puerta completa + poste de red (goma espuma + revestimiento)",
-      "Protección metálica personalizada con color del club y logo",
-      "Césped Premium KDK Curly 9.000 Dtex (12mm) en 2 paños con backing de poliuretano",
-      "1 vidrio de repuesto",
+      "Personalización TOTAL (colores, identidad, logos, detalles)",
+      "Estructura reforzada + sistema de amortiguación PRO",
+      "Full panorámica 360° (sin esquinas)",
+      "Vidrios templados de 12mm certificados (norma UNE)",
+      "Estructura galvanizada, pintura electroestática",
+      "Rejas electrosoldadas de 4 mm (mayor rigidez y durabilidad)",
+      "Césped premium de última generación (mayor vida útil y mejor rebote)",
+      "Incluye vidrio de repuesto",
     ],
+    footer: "Experiencia premium en cada detalle",
   },
 ];
 
@@ -242,12 +246,12 @@ function Canchas() {
               key={c.title}
               className="bg-atila-gray-900 border border-atila-gray-700 overflow-hidden hover:border-atila-accent/50 transition-colors group"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className={`relative aspect-[3/2] overflow-hidden ${c.imageFit === "contain" ? "bg-black" : ""}`}>
                 <Image
                   src={c.image}
                   alt={`Cancha ${c.title} de pádel ATILA`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`group-hover:scale-105 transition-transform duration-500 ${c.imageFit === "contain" ? "object-contain" : "object-cover"}`}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-atila-gray-900/80 to-transparent" />
@@ -266,6 +270,11 @@ function Canchas() {
                     </li>
                   ))}
                 </ul>
+                {c.footer && (
+                  <p className="mt-4 text-atila-gray-500 text-xs italic border-t border-atila-gray-700 pt-3">
+                    {c.footer}
+                  </p>
+                )}
               </div>
             </div>
           ))}
@@ -280,8 +289,8 @@ function Canchas() {
 /* ------------------------------------------------------------------ */
 const carouselImages = [
   { src: "/carousel-1.webp", caption: "Estructura reforzada en acero galvanizado", model: "COMPETITION PRO" },
-  { src: "/carousel-2.webp", caption: "Cristal templado de 12mm certificado", model: "COMPETITION PRO" },
-  { src: "/carousel-3.webp", caption: "Césped de alto rendimiento fibrilado", model: "COMPETITION PRO" },
+  { src: "/carousel-2.webp", caption: "Sistema de amortiguación profesional", model: "COMPETITION PRO" },
+  { src: "/carousel-3.webp", caption: "Iluminación profesional, tipo cuello de cisne", model: "COMPETITION PRO" },
   { src: "/carousel-4.webp", caption: "Iluminación LED profesional integrada", model: "COMPETITION PRO" },
   { src: "/carousel-5.webp", caption: "Detalles de corte láser personalizados", model: "COMPETITION PRO" },
   { src: "/carousel-6.webp", caption: "Acabados premium en cada componente", model: "COMPETITION PRO" },
@@ -421,49 +430,34 @@ function CarouselGallery() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  COTIZADOR INTERACTIVO                                               */
+/*  COTIZADOR INTERACTIVO — Simplified                                  */
 /* ------------------------------------------------------------------ */
-interface QuoterForm {
-  tipoCancha: string;
+interface CotizadorForm {
+  nombre: string;
+  apellido: string;
+  localidad: string;
   cantidad: string;
-  materialPiso: string;
-  tipoBlindex: string;
-  ubicacion: string;
-  superficie: string;
-  presupuesto: string;
   observaciones: string;
 }
 
-const defaults: QuoterForm = {
-  tipoCancha: "",
+const cotizadorDefaults: CotizadorForm = {
+  nombre: "",
+  apellido: "",
+  localidad: "",
   cantidad: "",
-  materialPiso: "",
-  tipoBlindex: "",
-  ubicacion: "",
-  superficie: "",
-  presupuesto: "",
   observaciones: "",
 };
 
 function Cotizador() {
-  const [form, setForm] = useState<QuoterForm>(defaults);
+  const [form, setForm] = useState<CotizadorForm>(cotizadorDefaults);
   const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState<Partial<Record<keyof QuoterForm, string>>>({});
-  const formRef = useRef<HTMLFormElement>(null);
+  const [errors, setErrors] = useState<Partial<Record<keyof CotizadorForm, string>>>({});
 
-  const required: (keyof QuoterForm)[] = [
-    "tipoCancha",
-    "cantidad",
-    "materialPiso",
-    "tipoBlindex",
-    "ubicacion",
-    "superficie",
-    "presupuesto",
-  ];
+  const requiredFields: (keyof CotizadorForm)[] = ["nombre", "apellido", "localidad", "cantidad"];
 
   function validate(): boolean {
     const e: typeof errors = {};
-    for (const k of required) {
+    for (const k of requiredFields) {
       if (!form[k].trim()) e[k] = "Este campo es obligatorio";
     }
     setErrors(e);
@@ -475,13 +469,11 @@ function Cotizador() {
     if (!validate()) return;
     setSubmitted(true);
     setTimeout(() => {
-      setForm(defaults);
+      setForm(cotizadorDefaults);
       setSubmitted(false);
     }, 3000);
   }
 
-  const selectCls =
-    "w-full bg-atila-gray-800 border border-atila-gray-700 px-4 py-3 text-atila-gray-200 text-sm focus:outline-none focus:border-atila-accent transition-colors appearance-none";
   const inputCls =
     "w-full bg-atila-gray-800 border border-atila-gray-700 px-4 py-3 text-atila-gray-200 text-sm placeholder:text-atila-gray-500 focus:outline-none focus:border-atila-accent transition-colors";
 
@@ -489,146 +481,88 @@ function Cotizador() {
     <section id="cotizador" className="py-24 bg-atila-black">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-4">
-          COTIZADOR <span className="text-atila-accent">INTERACTIVO</span>
+          COTIZÁ <span className="text-atila-accent">TU CANCHA</span>
         </h2>
         <p className="text-center text-atila-gray-400 mb-12">
-          Completá el formulario y recibí tu presupuesto detallado en 24hs.
+          Completá el formulario y recibí tu presupuesto.
         </p>
 
         <form
-          ref={formRef}
           onSubmit={handleSubmit}
           className="bg-atila-gray-900 border border-atila-accent/30 p-8 shadow-[0_0_30px_rgba(65,215,167,0.08)] space-y-5"
         >
-          {/* Row 1 */}
+          {/* Row 1: Nombre + Apellido */}
           <div className="grid md:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-                Tipo de Cancha *
+                Nombre *
               </label>
-              <select
-                value={form.tipoCancha}
-                onChange={(e) => setForm({ ...form, tipoCancha: e.target.value })}
-                className={`${selectCls} ${errors.tipoCancha ? "border-red-500" : ""}`}
-              >
-                <option value="">Seleccioná</option>
-                <option>Profesional Esencial</option>
-                <option>Competition Pro</option>
-              </select>
-              {errors.tipoCancha && <p className="text-red-400 text-xs mt-1">{errors.tipoCancha}</p>}
+              <input
+                type="text"
+                value={form.nombre}
+                onChange={(e) => setForm({ ...form, nombre: e.target.value })}
+                placeholder="Tu nombre"
+                className={`${inputCls} ${errors.nombre ? "border-red-500" : ""}`}
+              />
+              {errors.nombre && <p className="text-red-400 text-xs mt-1">{errors.nombre}</p>}
             </div>
             <div>
               <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-                Cantidad de Canchas *
+                Apellido *
+              </label>
+              <input
+                type="text"
+                value={form.apellido}
+                onChange={(e) => setForm({ ...form, apellido: e.target.value })}
+                placeholder="Tu apellido"
+                className={`${inputCls} ${errors.apellido ? "border-red-500" : ""}`}
+              />
+              {errors.apellido && <p className="text-red-400 text-xs mt-1">{errors.apellido}</p>}
+            </div>
+          </div>
+
+          {/* Row 2: Localidad + Cantidad */}
+          <div className="grid md:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
+                Localidad / Provincia *
+              </label>
+              <input
+                type="text"
+                value={form.localidad}
+                onChange={(e) => setForm({ ...form, localidad: e.target.value })}
+                placeholder="Ej: Rosario, Santa Fe"
+                className={`${inputCls} ${errors.localidad ? "border-red-500" : ""}`}
+              />
+              {errors.localidad && <p className="text-red-400 text-xs mt-1">{errors.localidad}</p>}
+            </div>
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
+                Cantidad de canchas *
               </label>
               <select
                 value={form.cantidad}
                 onChange={(e) => setForm({ ...form, cantidad: e.target.value })}
-                className={`${selectCls} ${errors.cantidad ? "border-red-500" : ""}`}
+                className={`w-full bg-atila-gray-800 border border-atila-gray-700 px-4 py-3 text-atila-gray-200 text-sm focus:outline-none focus:border-atila-accent transition-colors appearance-none ${errors.cantidad ? "border-red-500" : ""}`}
               >
                 <option value="">Seleccioná</option>
                 {Array.from({ length: 10 }, (_, i) => (
-                  <option key={i + 1}>{i + 1}</option>
+                  <option key={i + 1} value={String(i + 1)}>{i + 1}</option>
                 ))}
               </select>
               {errors.cantidad && <p className="text-red-400 text-xs mt-1">{errors.cantidad}</p>}
             </div>
           </div>
 
-          {/* Row 2 */}
-          <div className="grid md:grid-cols-2 gap-5">
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-                Material de Piso *
-              </label>
-              <select
-                value={form.materialPiso}
-                onChange={(e) => setForm({ ...form, materialPiso: e.target.value })}
-                className={`${selectCls} ${errors.materialPiso ? "border-red-500" : ""}`}
-              >
-                <option value="">Seleccioná</option>
-                <option>Césped Sintético Premium</option>
-                <option>Césped Sintético Estándar</option>
-                <option>Arcilla Sintética</option>
-              </select>
-              {errors.materialPiso && <p className="text-red-400 text-xs mt-1">{errors.materialPiso}</p>}
-            </div>
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-                Tipo de Blindex *
-              </label>
-              <select
-                value={form.tipoBlindex}
-                onChange={(e) => setForm({ ...form, tipoBlindex: e.target.value })}
-                className={`${selectCls} ${errors.tipoBlindex ? "border-red-500" : ""}`}
-              >
-                <option value="">Seleccioná</option>
-                <option>Cristal Templado</option>
-                <option>Policarbonato</option>
-                <option>Malla Tensionada</option>
-              </select>
-              {errors.tipoBlindex && <p className="text-red-400 text-xs mt-1">{errors.tipoBlindex}</p>}
-            </div>
-          </div>
-
-          {/* Row 3 */}
-          <div className="grid md:grid-cols-2 gap-5">
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-                Ubicación *
-              </label>
-              <input
-                type="text"
-                value={form.ubicacion}
-                onChange={(e) => setForm({ ...form, ubicacion: e.target.value })}
-                placeholder="Ciudad / Provincia"
-                className={`${inputCls} ${errors.ubicacion ? "border-red-500" : ""}`}
-              />
-              {errors.ubicacion && <p className="text-red-400 text-xs mt-1">{errors.ubicacion}</p>}
-            </div>
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-                Superficie Aproximada (m²) *
-              </label>
-              <input
-                type="text"
-                value={form.superficie}
-                onChange={(e) => setForm({ ...form, superficie: e.target.value })}
-                placeholder="Ingresá los metros cuadrados disponibles"
-                className={`${inputCls} ${errors.superficie ? "border-red-500" : ""}`}
-              />
-              {errors.superficie && <p className="text-red-400 text-xs mt-1">{errors.superficie}</p>}
-            </div>
-          </div>
-
-          {/* Row 4 */}
+          {/* Observaciones */}
           <div>
             <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-              Presupuesto Estimado *
-            </label>
-            <select
-              value={form.presupuesto}
-              onChange={(e) => setForm({ ...form, presupuesto: e.target.value })}
-              className={`${selectCls} ${errors.presupuesto ? "border-red-500" : ""}`}
-            >
-              <option value="">Seleccioná</option>
-              <option>Hasta $100k</option>
-              <option>$100k - $300k</option>
-              <option>$300k - $500k</option>
-              <option>Más de $500k</option>
-            </select>
-            {errors.presupuesto && <p className="text-red-400 text-xs mt-1">{errors.presupuesto}</p>}
-          </div>
-
-          {/* Textarea */}
-          <div>
-            <label className="block text-xs uppercase tracking-wider text-atila-gray-400 mb-1">
-              Observaciones Adicionales
+              Observaciones adicionales
             </label>
             <textarea
               value={form.observaciones}
               onChange={(e) => setForm({ ...form, observaciones: e.target.value })}
-              placeholder="Cuéntanos más sobre tu proyecto (techos, iluminación, servicios complementarios, etc.)"
+              placeholder="Contanos más sobre tu proyecto..."
               rows={4}
               className={inputCls}
             />
@@ -645,9 +579,9 @@ function Cotizador() {
             <button
               type="submit"
               className="w-full bg-atila-accent text-atila-black py-4 font-extrabold uppercase tracking-wider text-sm hover:brightness-110 hover:scale-[1.02] transition-all"
-              aria-label="Obtener presupuesto detallado"
+              aria-label="Obtener presupuesto"
             >
-              OBTENER PRESUPUESTO DETALLADO
+              OBTENER PRESUPUESTO
             </button>
           )}
         </form>
@@ -664,10 +598,10 @@ function TiendaHeader() {
     <section id="tienda" className="pt-24 pb-4 bg-atila-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight">
-          TIENDA OFICIAL: ACCESORIOS DE <span className="text-atila-accent">ÉLITE</span>
+          TIENDA OFICIAL ATILA: PALETA Y ACCESORIOS DE <span className="text-atila-accent">ALTA CALIDAD</span>
         </h2>
         <p className="mt-4 text-atila-gray-400 max-w-2xl mx-auto">
-          Potencia tu juego con tecnología ATILA. Paletas de carbono premium con la mejor tecnología. Comprá directo y sin intermediarios.
+          Compra online y directo
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <span className="block h-px w-16 bg-atila-gray-700" />
@@ -885,36 +819,11 @@ function ProductGrid() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  RESEÑAS                                                             */
+/*  RESEÑAS — Instagram Reel                                            */
 /* ------------------------------------------------------------------ */
-const reviews = [
-  {
-    stars: 5,
-    text: "ATILA construyó nuestras 4 canchas panorámicas en tiempo récord. La calidad del blindex y el césped es impecable. Nuestros socios están encantados con el resultado.",
-    name: "Martín Leguizamón",
-    role: "Director — Pádel Club San Isidro",
-    location: "Buenos Aires, Argentina",
-  },
-  {
-    stars: 5,
-    text: "Desde el diseño hasta la entrega final, el equipo de ATILA fue profesional y transparente. Las canchas quedaron perfectas y el servicio post-instalación es excelente.",
-    name: "Carolina Méndez",
-    role: "Fundadora — Mega Pádel Rosario",
-    location: "Rosario, Argentina",
-  },
-  {
-    stars: 5,
-    text: "Elegimos a ATILA por la garantía de durabilidad y no nos defraudaron. Dos años después, las canchas lucen como el primer día. Recomiendo sin dudas.",
-    name: "Esteban Ruiz",
-    role: "Gerente — Complejo Pádel Sur",
-    location: "Córdoba, Argentina",
-  },
-];
-
 function Resenas() {
   return (
     <section className="py-24 relative overflow-hidden bg-atila-gray-950">
-      {/* Subtle geometric gradient overlay — no background image */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-atila-gray-900/50 via-atila-gray-950 to-atila-black/80" />
       <div className="absolute inset-0 z-0 opacity-[0.03]" style={{
         backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(65,215,167,0.5) 40px, rgba(65,215,167,0.5) 41px)",
@@ -922,35 +831,21 @@ function Resenas() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl md:text-4xl font-extrabold uppercase tracking-tight mb-16">
-          LO QUE DICEN NUESTROS <span className="text-atila-accent">CLIENTES</span>
+          NUESTRO TRABAJO <span className="text-atila-accent">EN ACCIÓN</span>
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {reviews.map((r, i) => (
-            <div
-              key={i}
-              className="bg-atila-gray-900 border border-atila-gray-700 p-8 hover:border-atila-accent/30 transition-colors"
-            >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: r.stars }).map((_, j) => (
-                  <Star
-                    key={j}
-                    size={18}
-                    className="text-atila-accent fill-atila-accent"
-                  />
-                ))}
-              </div>
-              <p className="text-atila-gray-300 text-sm leading-relaxed mb-6">
-                &ldquo;{r.text}&rdquo;
-              </p>
-              <div className="border-t border-atila-gray-700 pt-4">
-                <p className="font-bold text-atila-white">{r.name}</p>
-                <p className="text-atila-accent text-xs uppercase tracking-wider">
-                  {r.role}
-                </p>
-                <p className="text-atila-gray-500 text-xs mt-1">{r.location}</p>
-              </div>
-            </div>
-          ))}
+        <div className="flex justify-center">
+          <div className="w-full max-w-md border border-atila-gray-700 overflow-hidden">
+            <iframe
+              src="https://www.instagram.com/reel/DRNvIAZkm7q/embed/"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              scrolling="no"
+              allowFullScreen
+              className="w-full"
+              title="ATILA PÁDEL - Instagram Reel"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -990,7 +885,7 @@ function Footer() {
                 <Phone size={16} /> +54 9 3415 60-7480
               </a>
               <span className="flex items-center gap-2">
-                <MapPin size={16} /> Buenos Aires, Argentina
+                <MapPin size={16} /> La Paz 3940, Rosario, Santa Fe
               </span>
             </div>
           </div>
@@ -998,15 +893,37 @@ function Footer() {
           {/* Social */}
           <div>
             <h4 className="text-xs uppercase tracking-widest font-bold mb-4">Seguinos</h4>
-            <a
-              href="https://www.instagram.com/atilapadel/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-atila-gray-400 hover:text-atila-accent transition-colors"
-            >
-              <Instagram size={20} />
-              <span className="text-sm">@atilapadel</span>
-            </a>
+            <div className="space-y-3">
+              <a
+                href="https://www.instagram.com/atilapadel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-atila-gray-400 hover:text-atila-accent transition-colors"
+              >
+                <Instagram size={20} />
+                <span className="text-sm">@atilapadel</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/@atilapadel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-atila-gray-400 hover:text-atila-accent transition-colors"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.19 8.19 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.16z"/>
+                </svg>
+                <span className="text-sm">@atilapadel</span>
+              </a>
+              <a
+                href="https://www.youtube.com/@atilapadel/videos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-atila-gray-400 hover:text-atila-accent transition-colors"
+              >
+                <Youtube size={20} />
+                <span className="text-sm">ATILA PÁDEL</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1042,7 +959,7 @@ function FloatingWhatsApp() {
       aria-label="Hablar con un asesor por WhatsApp"
       className="pulse-teal fixed bottom-6 right-6 z-50 bg-atila-accent text-atila-black w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-all"
     >
-      <ShoppingBag size={28} />
+      <MessageCircle size={28} />
     </a>
   );
 }
@@ -1072,11 +989,68 @@ function ScrollTop() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  JSON-LD Structured Data                                             */
+/* ------------------------------------------------------------------ */
+function JsonLd() {
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "ATILA PÁDEL",
+    description: "Diseño e instalación de canchas de pádel profesionales en Argentina",
+    url: "https://atilapadel.com",
+    telephone: "+5493415607480",
+    email: "info@atilapadel.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "La Paz 3940",
+      addressLocality: "Rosario",
+      addressRegion: "Santa Fe",
+      addressCountry: "AR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "-32.9442",
+      longitude: "-60.6505",
+    },
+    sameAs: [
+      "https://www.instagram.com/atilapadel/",
+      "https://www.tiktok.com/@atilapadel",
+      "https://www.youtube.com/@atilapadel/videos",
+    ],
+    priceRange: "$$",
+    image: "https://atilapadel.com/isologotipo-page3.png",
+  };
+
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "ATILA PÁDEL",
+    url: "https://atilapadel.com",
+    logo: "https://atilapadel.com/isologotipo-page3.png",
+    sameAs: [
+      "https://www.instagram.com/atilapadel/",
+      "https://www.tiktok.com/@atilapadel",
+      "https://www.youtube.com/@atilapadel/videos",
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify([localBusiness, organization]),
+      }}
+    />
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  PAGE                                                                */
 /* ------------------------------------------------------------------ */
 export default function Page() {
   return (
     <main className="min-h-screen">
+      <JsonLd />
       <Navbar />
       <Hero />
       <PropuestaValor />
