@@ -646,11 +646,14 @@ const products = [
   {
     name: "Paleta Padel Conquista Atila Full Carbono Liviana",
     price: "$227.900",
-    oldPrice: "$250.691",
-    discount: "9% OFF",
+    oldPrice: "$285.702",
+    discount: "20% OFF",
     badge: null,
     images: [
-      "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2NGQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0faf0610b203968e7be604db56dd489378ccdb2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_653715-MLA105260751117_012026-F.webp",
+      "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMW5EQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e5d9c29479d90eb1a9d86a153db7d9700fd56bfb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_759527-MLA89215781940_082025-F.webp",
+      "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMTNEQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--25beaf4d941c62c15cc46b0171d147d2099be10a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_986104-MLA75813007742_042024-F.webp",
+      "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMlREQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--2e5db58e970d2354ab7c3b3786d03b6c23a0d9ac/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_747128-MLA75813137218_042024-F.webp",
+      "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjNEQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--85ab157415bfac7cfbc48d281439b8ca8bb56d5e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_859502-MLA75813077608_042024-F.webp",
     ],
     url: "https://www.gravedadx.com/products/paleta-padel-conquista-atila-full-carbono-liviana-mla1423245577?taxon_id=5753",
   },
