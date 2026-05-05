@@ -468,12 +468,12 @@ function Cotizador() {
     e.preventDefault();
     if (!validate()) return;
 
-    const mensaje = `¡Hola! Quiero cotizar mi cancha de pádel 🏓
+    const mensaje = `¡Hola! Quiero cotizar mi cancha de pádel
 
-👤 Nombre: ${form.nombre} ${form.apellido}
-📍 Ubicación: ${form.localidad}
-🏟️ Cantidad de canchas: ${form.cantidad}
-📝 Observaciones: ${form.observaciones.trim() || "Sin observaciones adicionales"}
+• Nombre: ${form.nombre} ${form.apellido}
+• Ubicación: ${form.localidad}
+• Cantidad de canchas: ${form.cantidad}
+• Observaciones: ${form.observaciones.trim() || "Sin observaciones adicionales"}
 
 ¡Gracias!`;
 
