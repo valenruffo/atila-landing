@@ -114,11 +114,10 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center pt-20">
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tight leading-[0.95]">
-          CANCHAS DE PÁDEL PROFESIONALES<br />
-          PERSONALIZADAS
+          CANCHAS DE PÁDEL PROFESIONALES
         </h1>
         <p className="mt-4 text-lg sm:text-xl md:text-2xl font-semibold text-atila-accent uppercase tracking-wider">
-          Diseñadas para rendir, construidas para durar.
+          100% PERSONALIZADAS
         </p>
         <p className="mt-6 text-base md:text-lg text-atila-gray-300 max-w-2xl mx-auto leading-relaxed">
           DISEÑAMOS E INSTALAMOS CANCHAS PREMIUM PARA CLUBES, COMPLEJOS DEPORTIVOS E INVERSORES
@@ -611,7 +610,7 @@ function TiendaHeader() {
     <section id="tienda" className="pt-24 pb-4 bg-atila-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight">
-          TIENDA OFICIAL ATILA: PALETA Y ACCESORIOS DE <span className="text-atila-accent">ALTA CALIDAD</span>
+          TIENDA OFICIAL ATILA: PALETAS Y ACCESORIOS DE <span className="text-atila-accent">ALTA CALIDAD</span>
         </h2>
         <p className="mt-4 text-atila-gray-400 max-w-2xl mx-auto">
           Compra online y directo
@@ -643,6 +642,17 @@ const products = [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOGtGQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--de251670a8252f5d7ac3406ef0a36017007ef388/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_705499-MLA105262230985_012026-F.webp",
     ],
     url: "https://www.gravedadx.com/products/paleta-padel-atila-conquista-carbono-12k-diamante-eva-feel",
+  },
+  {
+    name: "Paleta Padel Conquista Atila Full Carbono Liviana",
+    price: "$227.900",
+    oldPrice: "$250.691",
+    discount: "9% OFF",
+    badge: null,
+    images: [
+      "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2NGQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a0faf0610b203968e7be604db56dd489378ccdb2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_653715-MLA105260751117_012026-F.webp",
+    ],
+    url: "https://www.gravedadx.com/products/paleta-padel-conquista-atila-full-carbono-liviana-mla1423245577?taxon_id=5753",
   },
   {
     name: "Paleta Atila Bleda Gota Full Carbono Liviana",
@@ -684,7 +694,7 @@ const products = [
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeSsxQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e08aed6d7a8fb25c52754b8ae86885cdea93a583/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_678159-MLA75831474682_042024-F.webp",
       "https://d1v25kychuu7fe.cloudfront.net/web-experto/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBemkxQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--ca5355d50a5c6b45a79665b08289b7cdb1d8aa60/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQW1zRE1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--aa8de4e355790c0144fef8391369ebad02ad8e4f/D_699225-MLA76003383995_042024-F.webp",
     ],
-    url: "https://www.gravedadx.com/products/paleta-padel-atila-soberbia-diamante-full-carbono",
+    url: "https://www.gravedadx.com/products/paleta-padel-atila-soberbia-diamante-full-carbono-2497499679614431?taxon_id=5753",
   },
   {
     name: "Paleta Atila Bleda Carbono 12k Diamante Eva Soft",
@@ -883,7 +893,7 @@ function Footer() {
               className="h-20 w-auto mb-4"
             />
             <p className="text-atila-gray-400 text-sm leading-relaxed">
-              Construimos complejos de pádel de clase mundial. Diseño, instalación y garantía llave en mano.
+              Construimos complejos de pádel de clase mundial. Diseño, instalación y garantía.
             </p>
           </div>
 
