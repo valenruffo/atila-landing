@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://atilapadel.com" },
   robots: { index: true, follow: true },
   verification: { other: { "google-site-verification": "" } },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
   other: {
     "last-modified": "2026-05-05",
   },
@@ -38,18 +43,19 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         <meta property="og:title" content="ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina | Diseño e Instalación" />
         <meta property="og:description" content="Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://atilapadel.com" />
         <meta property="og:site_name" content="ATILA PÁDEL" />
         <meta property="og:locale" content="es_AR" />
-        <meta property="og:image" content="https://atilapadel.com/logoFinalBlanco.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="ATILA PÁDEL — Canchas de Pádel Profesionales" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://atilapadel.com/logoFinalBlanco.png" />
+        <meta property="og:image" content="https://atilapadel.com/icon.svg" />
+        <meta property="og:image:type" content="image/svg+xml" />
+        <meta property="og:image:alt" content="ATILA PÁDEL" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="https://atilapadel.com/icon.svg" />
         <meta name="twitter:title" content="ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina" />
         <meta name="twitter:description" content="Fabricamos e instalamos canchas de pádel profesionales en Argentina." />
         <style>{`
