@@ -4,7 +4,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://atilapadel.com"),
   title: "ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina | Diseño e Instalación",
   description:
     "Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento. Solicitá tu presupuesto.",
@@ -26,21 +25,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://atilapadel.com" },
   robots: { index: true, follow: true },
   verification: { other: { "google-site-verification": "" } },
-  openGraph: {
-    title: "ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina | Diseño e Instalación",
-    description:
-      "Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento.",
-    type: "website",
-    url: "https://atilapadel.com",
-    siteName: "ATILA PÁDEL",
-    locale: "es_AR",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina",
-    description:
-      "Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento.",
-  },
   other: {
     "last-modified": "2026-05-05",
   },
@@ -54,6 +38,20 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <meta property="og:title" content="ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina | Diseño e Instalación" />
+        <meta property="og:description" content="Fabricamos e instalamos canchas de pádel profesionales en Argentina. Diseño personalizado, estructura certificada y césped de alto rendimiento." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://atilapadel.com" />
+        <meta property="og:site_name" content="ATILA PÁDEL" />
+        <meta property="og:locale" content="es_AR" />
+        <meta property="og:image" content="https://atilapadel.com/logoFinalBlanco.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="ATILA PÁDEL — Canchas de Pádel Profesionales" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://atilapadel.com/logoFinalBlanco.png" />
+        <meta name="twitter:title" content="ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina" />
+        <meta name="twitter:description" content="Fabricamos e instalamos canchas de pádel profesionales en Argentina." />
         <style>{`
           @font-face {
             font-family: 'Praktika';

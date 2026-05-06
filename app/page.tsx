@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   Menu, X, Layers, ShieldCheck, Star, MessageCircle,
   Instagram, Mail, Phone, MapPin, ChevronUp, ChevronLeft,
-  ChevronRight, ChevronDown, ArrowRight, ShoppingBag, Youtube,
+  ChevronRight, ArrowRight, ShoppingBag, Youtube,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -889,92 +889,6 @@ function Resenas() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  FAQ — Preguntas Frecuentes (AI SEO)                                 */
-/* ------------------------------------------------------------------ */
-const faqData = [
-  {
-    q: "¿Cuánto cuesta una cancha de pádel profesional?",
-    a: "El precio varía según el modelo, cantidad y ubicación. ATILA PÁDEL ofrece dos líneas: el Modelo Club (esencial, mejor relación precio-rendimiento) y el Modelo Competition Pro (insignia, con personalización total y componentes premium). Solicitá tu presupuesto personalizado por WhatsApp al +5493415607480 o por email a info@atilapadel.com.",
-  },
-  {
-    q: "¿Qué medidas tiene una cancha de pádel reglamentaria?",
-    a: "Una cancha de pádel oficial mide 20 metros de largo por 10 metros de ancho, con una superficie total de 200 m². Las canchas de ATILA PÁDEL cumplen con las dimensiones reglamentarias de la Federación Internacional de Pádel, incluyendo la altura mínima de 6 metros libre de obstáculos.",
-  },
-  {
-    q: "¿Qué tipo de vidrio usan las canchas de ATILA?",
-    a: "Todas las canchas de ATILA PÁDEL utilizan vidrio templado de 12mm certificado bajo norma UNE. Este estándar garantiza resistencia a impactos y seguridad para los jugadores. El Modelo Competition Pro incluye además un panel de vidrio de repuesto.",
-  },
-  {
-    q: "¿Cuánto tiempo tarda la instalación de una cancha?",
-    a: "La instalación profesional de una cancha de pádel ATILA suele completarse en 2 a 4 semanas, dependiendo de la preparación del terreno, la cantidad de canchas y las condiciones climáticas. El equipo de ATILA se encarga de todo el proceso: desde la estructura hasta el césped y la iluminación LED.",
-  },
-  {
-    q: "¿ATILA PÁDEL envía canchas a todo el país?",
-    a: "Sí. ATILA PÁDEL diseña, fabrica e instala canchas en toda Argentina. El equipo coordina logística, transporte e instalación en cualquier provincia. La sede central está en Rosario, Santa Fe, pero el alcance de instalación es nacional.",
-  },
-  {
-    q: "¿Qué diferencia hay entre el Modelo Club y el Competition Pro?",
-    a: "El Modelo Club es la opción esencial con estructura galvanizada, vidrio templado 12mm y césped profesional. El Competition Pro agrega personalización total de colores e identidad, sistema de amortiguación PRO, rejas electrosoldadas de 4mm, césped premium de última generación y vidrio de repuesto incluido.",
-  },
-];
-
-function FaqJsonLd() {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
-            { "@type": "Question", name: "¿Cuánto cuesta una cancha de pádel profesional?", acceptedAnswer: { "@type": "Answer", text: "El precio varía según el modelo, cantidad y ubicación. ATILA PÁDEL ofrece dos líneas: el Modelo Club (esencial) y el Modelo Competition Pro (insignia con personalización total). Contactá por WhatsApp al +5493415607480 para un presupuesto personalizado." } },
-            { "@type": "Question", name: "¿Qué medidas tiene una cancha de pádel reglamentaria?", acceptedAnswer: { "@type": "Answer", text: "Una cancha de pádel oficial mide 20 metros de largo por 10 metros de ancho, con una superficie total de 200 m². ATILA PÁDEL cumple con las dimensiones reglamentarias de la Federación Internacional de Pádel." } },
-            { "@type": "Question", name: "¿Qué tipo de vidrio usan las canchas de ATILA?", acceptedAnswer: { "@type": "Answer", text: "Vidrio templado de 12mm certificado bajo norma UNE, que garantiza resistencia a impactos y seguridad. El Modelo Competition Pro incluye además un panel de vidrio de repuesto." } },
-            { "@type": "Question", name: "¿Cuánto tiempo tarda la instalación de una cancha?", acceptedAnswer: { "@type": "Answer", text: "La instalación profesional suele completarse en 2 a 4 semanas, dependiendo de la preparación del terreno, cantidad de canchas y condiciones climáticas." } },
-            { "@type": "Question", name: "¿ATILA PÁDEL envía canchas a todo el país?", acceptedAnswer: { "@type": "Answer", text: "Sí. ATILA PÁDEL diseña, fabrica e instala canchas en toda Argentina, con sede central en Rosario, Santa Fe." } },
-            { "@type": "Question", name: "¿Qué diferencia hay entre el Modelo Club y el Competition Pro?", acceptedAnswer: { "@type": "Answer", text: "El Modelo Club es la opción esencial. El Competition Pro agrega personalización total, sistema de amortiguación PRO, rejas electrosoldadas de 4mm, césped premium y vidrio de repuesto incluido." } },
-          ],
-        }),
-      }}
-    />
-  );
-}
-
-function FaqSection() {
-  return (
-    <section id="faq" className="py-24 bg-atila-gray-900">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl md:text-4xl uppercase tracking-tight mb-4">
-          PREGUNTAS <span className="text-atila-accent">FRECUENTES</span>
-        </h2>
-        <p className="text-center text-atila-gray-400 mb-12 max-w-xl mx-auto">
-          Todo lo que necesitás saber sobre nuestras canchas de pádel profesionales.
-        </p>
-        <div className="space-y-3">
-          {faqData.map((item, i) => (
-            <details
-              key={i}
-              className="group border border-atila-gray-700 bg-atila-gray-900 open:border-atila-accent/40 transition-colors"
-            >
-              <summary className="flex items-center justify-between cursor-pointer list-none p-5 text-atila-gray-200 text-sm uppercase tracking-wider hover:text-atila-accent transition-colors">
-                {item.q}
-                <ChevronDown
-                  size={20}
-                  className="text-atila-accent flex-shrink-0 ml-4 transition-transform duration-200 group-open:rotate-180"
-                />
-              </summary>
-              <div className="px-5 pb-5 text-atila-gray-400 text-sm leading-relaxed">
-                {item.a}
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
 /*  FOOTER                                                              */
 /* ------------------------------------------------------------------ */
 function Footer() {
@@ -1180,7 +1094,6 @@ export default function Page() {
         Ir al contenido principal
       </a>
       <JsonLd />
-      <FaqJsonLd />
       <Navbar />
       <Hero />
       <PropuestaValor />
@@ -1188,7 +1101,6 @@ export default function Page() {
       <CarouselGallery />
       <Cotizador />
       <Resenas />
-      <FaqSection />
       <TiendaHeader />
       <ProductGrid />
       <Footer />
