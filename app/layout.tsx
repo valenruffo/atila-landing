@@ -51,11 +51,11 @@ export default function RootLayout({
         <meta property="og:url" content="https://atilapadel.com" />
         <meta property="og:site_name" content="ATILA PÁDEL" />
         <meta property="og:locale" content="es_AR" />
-        <meta property="og:image" content="https://atilapadel.com/icon.svg" />
-        <meta property="og:image:type" content="image/svg+xml" />
+        <meta property="og:image" content="https://atilapadel.com/isologotipo-page3.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:alt" content="ATILA PÁDEL" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:image" content="https://atilapadel.com/icon.svg" />
+        <meta name="twitter:image" content="https://atilapadel.com/isologotipo-page3.png" />
         <meta name="twitter:title" content="ATILA PÁDEL — Canchas de Pádel Profesionales en Argentina" />
         <meta name="twitter:description" content="Fabricamos e instalamos canchas de pádel profesionales en Argentina." />
         <style>{`
